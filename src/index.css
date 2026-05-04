@@ -6,46 +6,49 @@
 
 @layer base {
   :root {
-    --background: 350 30% 98%;
-    --foreground: 320 40% 15%;
+    /* Paleta Flora Boutique:
+       #97224A burdeo · #EFCEDA blush · #E9E6E4 gris claro · #899B89 sage · #E1E6D6 cream sage */
+    --background: 60 14% 95%;            /* #E9E6E4 */
+    --foreground: 338 60% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 320 40% 15%;
+    --card-foreground: 338 60% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 320 40% 15%;
+    --popover-foreground: 338 60% 18%;
 
-    /* Brand: deep magenta/plum from logo */
-    --primary: 320 55% 30%;
-    --primary-foreground: 350 30% 98%;
-    --primary-glow: 320 60% 45%;
+    /* Brand: burdeo */
+    --primary: 338 64% 36%;              /* #97224A */
+    --primary-foreground: 60 14% 97%;
+    --primary-glow: 338 55% 50%;
 
-    --secondary: 350 40% 94%;
-    --secondary-foreground: 320 55% 30%;
+    --secondary: 335 50% 87%;            /* #EFCEDA blush */
+    --secondary-foreground: 338 64% 30%;
 
-    --muted: 340 20% 95%;
-    --muted-foreground: 320 15% 40%;
+    --muted: 75 17% 87%;                 /* #E1E6D6 */
+    --muted-foreground: 115 8% 35%;
 
-    --accent: 12 75% 65%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 115 8% 57%;                /* #899B89 sage */
+    --accent-foreground: 60 14% 97%;
 
-    --blush: 340 70% 88%;
-    --cream: 40 50% 96%;
+    --blush: 335 50% 87%;
+    --cream: 75 17% 87%;
+    --sage: 115 8% 57%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 340 25% 88%;
-    --input: 340 25% 88%;
-    --ring: 320 55% 30%;
+    --border: 75 12% 82%;
+    --input: 75 12% 82%;
+    --ring: 338 64% 36%;
 
     --radius: 0.75rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(320 55% 30% / 0.85), hsl(320 60% 25% / 0.7));
-    --gradient-soft: linear-gradient(180deg, hsl(350 30% 98%), hsl(340 40% 94%));
-    --gradient-brand: linear-gradient(135deg, hsl(320 55% 30%), hsl(320 65% 50%));
-    --shadow-elegant: 0 20px 60px -20px hsl(320 55% 30% / 0.35);
-    --shadow-soft: 0 10px 30px -10px hsl(320 30% 40% / 0.2);
+    --gradient-hero: linear-gradient(135deg, hsl(338 64% 25% / 0.85), hsl(338 70% 18% / 0.7));
+    --gradient-soft: linear-gradient(180deg, hsl(60 14% 97%), hsl(75 17% 90%));
+    --gradient-brand: linear-gradient(135deg, hsl(338 64% 36%), hsl(338 55% 50%));
+    --shadow-elegant: 0 20px 60px -20px hsl(338 64% 36% / 0.35);
+    --shadow-soft: 0 10px 30px -10px hsl(115 8% 30% / 0.2);
     --transition-smooth: cubic-bezier(0.65, 0, 0.35, 1);
   }
 
