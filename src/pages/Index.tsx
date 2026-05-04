@@ -45,6 +45,7 @@ const Index = () => {
             <a href="#galeria" className="hover:text-primary transition-colors">Galeria</a>
             <a href="#nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#contacto" className="hover:text-primary transition-colors">Contacto</a>
+            <a href="/v2" className="hover:text-primary transition-colors">V2</a>
           </div>
           <Button variant="default" className="bg-gradient-brand hover:opacity-90 shadow-soft" asChild>
             <a href="#contacto">Pedir ahora</a>
