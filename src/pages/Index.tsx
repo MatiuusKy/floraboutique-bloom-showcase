@@ -4,6 +4,7 @@ import logo from "@/assets/floraboutique-logo.jpeg";
 import heroDesktop from "@/assets/hero-desktop.jpeg";
 import heroMobile from "@/assets/hero-mobile.jpeg";
 import { Flower2, Heart, Truck, Sparkles, Instagram, MessageCircle, MapPin } from "lucide-react";
+import Gallery from "@/components/Gallery";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
