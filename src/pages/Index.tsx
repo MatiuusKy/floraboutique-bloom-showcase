@@ -4,6 +4,7 @@ import logo from "@/assets/floraboutique-logo.jpeg";
 import heroDesktop from "@/assets/hero-desktop.jpeg";
 import heroMobile from "@/assets/hero-mobile.jpeg";
 import { Flower2, Heart, Truck, Sparkles, Instagram, MessageCircle, MapPin } from "lucide-react";
+import Gallery from "@/components/Gallery";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -41,6 +42,7 @@ const Index = () => {
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#colecciones" className="hover:text-primary transition-colors">Colecciones</a>
+            <a href="#galeria" className="hover:text-primary transition-colors">Galeria</a>
             <a href="#nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#contacto" className="hover:text-primary transition-colors">Contacto</a>
           </div>
@@ -178,6 +180,8 @@ const Index = () => {
       </section>
 
       {/* About */}
+      <Gallery />
+
       <section id="nosotros" className="py-24 bg-gradient-soft relative overflow-hidden">
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
