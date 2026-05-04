@@ -49,6 +49,7 @@ export default {
         },
         blush: "hsl(var(--blush))",
         cream: "hsl(var(--cream))",
+        sage: "hsl(var(--sage))",
         "primary-glow": "hsl(var(--primary-glow))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
