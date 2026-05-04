@@ -1,13 +1,17 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/floraboutique-logo.jpeg";
 import heroDesktop from "@/assets/hero-desktop.jpeg";
 import heroMobile from "@/assets/hero-mobile.jpeg";
 import { Flower2, Heart, Truck, Sparkles, Instagram, MessageCircle, MapPin } from "lucide-react";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const stagger: Variants = {
+  show: { transition: { staggerChildren: 0.15 } },
 };
 
 const stagger = {
