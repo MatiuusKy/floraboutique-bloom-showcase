@@ -137,7 +137,13 @@ const ScrollExpandMedia = ({
             transition={{ duration: 0.1 }}
           >
             <img src={bgImageSrc} alt="Background" className="w-full h-full object-cover object-center" />
-            <div className="absolute inset-0 bg-black/10" />
+            <div className="absolute inset-0 bg-black/60" />
+          </motion.div>
+          <motion.div
+            className="absolute inset-0 z-0 bg-black/30"
+            animate={{ opacity: 0.6 - scrollProgress * 0.6 }}
+            transition={{ duration: 0.1 }}
+          >
           </motion.div>
 
           <div className="container mx-auto flex flex-col items-center justify-start relative z-10">
@@ -175,9 +181,9 @@ const ScrollExpandMedia = ({
                   <div className="relative w-full h-full">
                     <img src={mediaSrc} alt={title || 'Media'} className="w-full h-full object-cover rounded-xl" />
                     <motion.div
-                      className="absolute inset-0 bg-black/40 rounded-xl"
-                      initial={{ opacity: 0.7 }}
-                      animate={{ opacity: 0.7 - scrollProgress * 0.3 }}
+                      className="absolute inset-0 bg-black/60 rounded-xl"
+                      initial={{ opacity: 0.85 }}
+                      animate={{ opacity: 0.85 - scrollProgress * 0.6 }}
                       transition={{ duration: 0.2 }}
                     />
                   </div>
