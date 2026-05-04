@@ -1,6 +1,9 @@
 import { motion, type Variants } from "framer-motion";
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { ShoppingBag } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 import rosas from "@/assets/product-rosas.jpg";
 import girasoles from "@/assets/product-girasoles.jpg";
 import tulipanes from "@/assets/product-tulipanes.jpg";
@@ -32,9 +35,12 @@ const fadeUp: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
+const priceToNumber = (p: string) => Number(p.replace(/[^0-9]/g, ""));
+
 const Gallery = () => {
   const [filter, setFilter] = useState("Todos");
   const [open, setOpen] = useState<Product | null>(null);
+  const { add } = useCart();
 
   const filtered = filter === "Todos" ? products : products.filter((p) => p.category === filter);
 
@@ -122,14 +128,15 @@ const Gallery = () => {
                 <h3 className="font-display text-3xl text-primary mt-2 mb-3">{open.name}</h3>
                 <p className="text-muted-foreground mb-5">{open.desc}</p>
                 <div className="font-display text-3xl text-gradient mb-6">{open.price}</div>
-                <a
-                  href="https://www.instagram.com/floraboutique.cl/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-brand text-primary-foreground font-medium hover:opacity-90 transition-opacity"
+                <Button
+                  className="bg-gradient-brand"
+                  onClick={() => {
+                    add({ id: open.name, name: open.name, price: priceToNumber(open.price), image: open.img });
+                    setOpen(null);
+                  }}
                 >
-                  Pedir por Instagram
-                </a>
+                  <ShoppingBag className="w-4 h-4 mr-2" /> Anadir al carrito
+                </Button>
               </div>
             </div>
           )}
