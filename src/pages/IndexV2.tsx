@@ -12,6 +12,7 @@ import { useCart } from "@/context/CartContext";
 
 const IndexV2 = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [showNav, setShowNav] = useState(false);
   const { count, setOpen } = useCart();
 
   useEffect(() => {
@@ -22,9 +23,27 @@ const IndexV2 = () => {
     return () => window.removeEventListener("resize", check);
   }, []);
 
+  useEffect(() => {
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      const goingDown = y > lastY;
+      // Show only after scrolling past the hero, and only when going down
+      if (y > window.innerHeight * 0.6 && goingDown) setShowNav(true);
+      else if (!goingDown || y < 80) setShowNav(false);
+      lastY = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/50">
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50 transition-transform duration-500 ease-out ${
+          showNav ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div className="container mx-auto px-6 py-3 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3">
             <img src={logo} alt="Flora Boutique" className="w-9 h-9 rounded-full object-cover" />

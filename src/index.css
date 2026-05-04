@@ -17,10 +17,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 338 60% 18%;
 
-    /* Brand: burdeo */
-    --primary: 338 64% 36%;              /* #97224A */
+    /* Brand: burdeo #580A2D */
+    --primary: 338 80% 19%;
     --primary-foreground: 60 14% 97%;
-    --primary-glow: 338 55% 50%;
+    --primary-glow: 338 65% 32%;
 
     --secondary: 335 50% 87%;            /* #EFCEDA blush */
     --secondary-foreground: 338 64% 30%;
@@ -40,14 +40,14 @@
 
     --border: 75 12% 82%;
     --input: 75 12% 82%;
-    --ring: 338 64% 36%;
+    --ring: 338 80% 19%;
 
     --radius: 0.75rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(338 64% 25% / 0.85), hsl(338 70% 18% / 0.7));
+    --gradient-hero: linear-gradient(135deg, hsl(338 80% 15% / 0.85), hsl(338 80% 10% / 0.7));
     --gradient-soft: linear-gradient(180deg, hsl(60 14% 97%), hsl(75 17% 90%));
-    --gradient-brand: linear-gradient(135deg, hsl(338 64% 36%), hsl(338 55% 50%));
-    --shadow-elegant: 0 20px 60px -20px hsl(338 64% 36% / 0.35);
+    --gradient-brand: linear-gradient(135deg, hsl(338 80% 19%), hsl(338 65% 32%));
+    --shadow-elegant: 0 20px 60px -20px hsl(338 80% 19% / 0.4);
     --shadow-soft: 0 10px 30px -10px hsl(115 8% 30% / 0.2);
     --transition-smooth: cubic-bezier(0.65, 0, 0.35, 1);
   }
