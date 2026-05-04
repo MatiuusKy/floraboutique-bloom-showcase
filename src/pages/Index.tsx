@@ -180,6 +180,8 @@ const Index = () => {
       </section>
 
       {/* About */}
+      <Gallery />
+
       <section id="nosotros" className="py-24 bg-gradient-soft relative overflow-hidden">
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
