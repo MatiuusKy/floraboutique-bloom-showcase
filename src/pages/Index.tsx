@@ -14,9 +14,6 @@ const stagger: Variants = {
   show: { transition: { staggerChildren: 0.15 } },
 };
 
-const stagger = {
-  show: { transition: { staggerChildren: 0.15 } },
-};
 
 const collections = [
   { name: "Ramos de Rosas", desc: "Clasicos atemporales en tonos pasion.", emoji: "🌹" },
