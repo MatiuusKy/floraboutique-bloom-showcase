@@ -6,7 +6,7 @@ import {
   useState,
   ReactNode,
 } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ScrollExpandMediaProps {
   mediaType?: 'video' | 'image';
@@ -40,8 +40,19 @@ const ScrollExpandMedia = ({
   const [mediaFullyExpanded, setMediaFullyExpanded] = useState(false);
   const [touchStartY, setTouchStartY] = useState(0);
   const [isMobileState, setIsMobileState] = useState(false);
+  const [bgIndex, setBgIndex] = useState(0);
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  const carouselImages = bgImages && bgImages.length > 0 ? bgImages : [bgImageSrc];
+
+  useEffect(() => {
+    if (carouselImages.length <= 1 || mediaFullyExpanded) return;
+    const id = setInterval(() => {
+      setBgIndex((i) => (i + 1) % carouselImages.length);
+    }, bgInterval);
+    return () => clearInterval(id);
+  }, [carouselImages.length, bgInterval, mediaFullyExpanded]);
 
   useEffect(() => {
     setScrollProgress(0);
