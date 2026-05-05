@@ -1,7 +1,11 @@
 import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
-import heroDesktop from "@/assets/hero-desktop.jpeg";
-import heroMobile from "@/assets/hero-mobile.jpeg";
-import logo from "@/assets/floraboutique-logo.jpeg";
+import heroCenter from "@/assets/center-bouquets.jpeg";
+import bg1 from "@/assets/hero-carousel-1.jpeg";
+import bg2 from "@/assets/hero-carousel-2.jpeg";
+import bg3 from "@/assets/hero-carousel-3.jpeg";
+import bg4 from "@/assets/hero-carousel-4.jpeg";
+import bg5 from "@/assets/hero-carousel-5.jpeg";
+import logo from "@/assets/floraboutique-logo-new.jpeg";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Instagram, MessageCircle, MapPin, Flower2, ShoppingBag } from "lucide-react";
@@ -75,8 +79,9 @@ const IndexV2 = () => {
 
       <ScrollExpandMedia
         mediaType="image"
-        mediaSrc={isMobile ? heroMobile : heroDesktop}
-        bgImageSrc={isMobile ? heroMobile : heroDesktop}
+        mediaSrc={heroCenter}
+        bgImageSrc={bg1}
+        bgImages={[bg1, bg2, bg3, bg4, bg5]}
         title="Flora Boutique"
         date="Floreria artesanal · Chile"
         scrollToExpand="Desplaza para descubrir"
@@ -84,11 +89,11 @@ const IndexV2 = () => {
       >
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <img src={logo} alt="Flora Boutique" className="w-20 h-20 rounded-full object-cover mx-auto shadow-elegant" />
-          <h2 className="font-display text-4xl md:text-5xl text-primary">
+          <h2 className="font-seasons text-4xl md:text-5xl text-primary">
             Flores que <em className="italic">cuentan</em> historias
           </h2>
           <p className="text-lg text-muted-foreground">
-            Cada ramo de Flora Boutique es disenado a mano para celebrar tus momentos mas importantes.
+            Cada ramo de Flora Boutique es diseñado cuidadosamente para celebrar tus momentos mas importantes.
           </p>
           <Button size="lg" className="bg-gradient-brand" asChild>
             <a href="#catalogo">Ver catalogo</a>
