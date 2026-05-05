@@ -151,7 +151,18 @@ const ScrollExpandMedia = ({
             animate={{ opacity: 1 - scrollProgress }}
             transition={{ duration: 0.1 }}
           >
-            <img src={bgImageSrc} alt="Background" className="w-full h-full object-cover object-center" />
+            <AnimatePresence mode="sync">
+              <motion.img
+                key={carouselImages[bgIndex]}
+                src={carouselImages[bgIndex]}
+                alt="Background"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ opacity: { duration: 1.2 }, scale: { duration: 6, ease: 'linear' } }}
+              />
+            </AnimatePresence>
             <div className="absolute inset-0 bg-black/60" />
           </motion.div>
           <motion.div
