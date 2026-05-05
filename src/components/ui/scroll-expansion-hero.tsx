@@ -6,13 +6,15 @@ import {
   useState,
   ReactNode,
 } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ScrollExpandMediaProps {
   mediaType?: 'video' | 'image';
   mediaSrc: string;
   posterSrc?: string;
   bgImageSrc: string;
+  bgImages?: string[];
+  bgInterval?: number;
   title?: string;
   date?: string;
   scrollToExpand?: string;
@@ -25,6 +27,8 @@ const ScrollExpandMedia = ({
   mediaSrc,
   posterSrc,
   bgImageSrc,
+  bgImages,
+  bgInterval = 4500,
   title,
   date,
   scrollToExpand,
@@ -36,8 +40,19 @@ const ScrollExpandMedia = ({
   const [mediaFullyExpanded, setMediaFullyExpanded] = useState(false);
   const [touchStartY, setTouchStartY] = useState(0);
   const [isMobileState, setIsMobileState] = useState(false);
+  const [bgIndex, setBgIndex] = useState(0);
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
+
+  const carouselImages = bgImages && bgImages.length > 0 ? bgImages : [bgImageSrc];
+
+  useEffect(() => {
+    if (carouselImages.length <= 1 || mediaFullyExpanded) return;
+    const id = setInterval(() => {
+      setBgIndex((i) => (i + 1) % carouselImages.length);
+    }, bgInterval);
+    return () => clearInterval(id);
+  }, [carouselImages.length, bgInterval, mediaFullyExpanded]);
 
   useEffect(() => {
     setScrollProgress(0);
@@ -136,7 +151,18 @@ const ScrollExpandMedia = ({
             animate={{ opacity: 1 - scrollProgress }}
             transition={{ duration: 0.1 }}
           >
-            <img src={bgImageSrc} alt="Background" className="w-full h-full object-cover object-center" />
+            <AnimatePresence mode="sync">
+              <motion.img
+                key={carouselImages[bgIndex]}
+                src={carouselImages[bgIndex]}
+                alt="Background"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ opacity: { duration: 1.2 }, scale: { duration: 6, ease: 'linear' } }}
+              />
+            </AnimatePresence>
             <div className="absolute inset-0 bg-black/60" />
           </motion.div>
           <motion.div
