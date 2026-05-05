@@ -13,6 +13,8 @@ interface ScrollExpandMediaProps {
   mediaSrc: string;
   posterSrc?: string;
   bgImageSrc: string;
+  bgImages?: string[];
+  bgInterval?: number;
   title?: string;
   date?: string;
   scrollToExpand?: string;
@@ -25,6 +27,8 @@ const ScrollExpandMedia = ({
   mediaSrc,
   posterSrc,
   bgImageSrc,
+  bgImages,
+  bgInterval = 4500,
   title,
   date,
   scrollToExpand,
