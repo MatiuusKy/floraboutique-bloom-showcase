@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Instagram, MessageCircle, MapPin, Flower2, ShoppingBag } from "lucide-react";
 import BouquetSelector from "@/components/BouquetSelector";
 import Gallery from "@/components/Gallery";
+import OrderProcess from "@/components/OrderProcess";
+import LocationInfo from "@/components/LocationInfo";
 import { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContext";
 
@@ -52,6 +54,8 @@ const IndexV2 = () => {
           <div className="hidden md:flex gap-8 text-sm font-medium">
             <a href="#catalogo" className="hover:text-primary transition-colors">Catalogo</a>
             <a href="#galeria" className="hover:text-primary transition-colors">Galeria</a>
+            <a href="#proceso" className="hover:text-primary transition-colors">Como pedir</a>
+            <a href="#ubicacion" className="hover:text-primary transition-colors">Ubicacion</a>
             <a href="#contacto" className="hover:text-primary transition-colors">Contacto</a>
           </div>
           <button
@@ -94,6 +98,8 @@ const IndexV2 = () => {
 
       <BouquetSelector />
       <Gallery />
+      <OrderProcess />
+      <LocationInfo />
 
       <section id="contacto" className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
         <motion.div
