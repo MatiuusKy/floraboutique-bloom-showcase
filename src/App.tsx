@@ -28,6 +28,7 @@ const App = () => (
             <Route path="/v2" element={<IndexV2 />} />
             <Route path="/v3" element={<IndexV3 />} />
             <Route path="/v4" element={<IndexV4 />} />
+            <Route path="/flora-admin" element={<FloraAdmin />} />
             <Route path="/v4/politicas/:slug" element={<Policies />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
