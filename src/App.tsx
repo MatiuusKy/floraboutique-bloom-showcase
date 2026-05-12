@@ -9,6 +9,7 @@ import Index from "./pages/Index.tsx";
 import IndexV2 from "./pages/IndexV2.tsx";
 import IndexV3 from "./pages/IndexV3.tsx";
 import IndexV4 from "./pages/IndexV4.tsx";
+import FloraAdmin from "./pages/FloraAdmin.tsx";
 import Policies from "./pages/Policies.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/v2" element={<IndexV2 />} />
             <Route path="/v3" element={<IndexV3 />} />
             <Route path="/v4" element={<IndexV4 />} />
+            <Route path="/flora-admin" element={<FloraAdmin />} />
             <Route path="/v4/politicas/:slug" element={<Policies />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
