@@ -176,7 +176,7 @@ const ScrollExpandHeroV4 = ({
                 </div>
                 {subtitle && (
                   <p
-                    className="text-lg md:text-xl text-primary-foreground/90 mt-6 drop-shadow font-seasons italic"
+                    className="text-sm sm:text-base md:text-lg text-primary-foreground/90 mt-5 drop-shadow font-seasons italic max-w-[85vw] px-4"
                     style={{ transform: `translateX(-${textTranslateX}vw)` }}
                   >
                     {subtitle}
