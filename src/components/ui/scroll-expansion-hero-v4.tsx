@@ -144,9 +144,9 @@ const ScrollExpandHeroV4 = ({
               </div>
 
               <div className="flex flex-col items-center text-center relative z-10 mt-4 px-4">
-                <div className="flex flex-col items-center gap-2 w-full">
+                <div className="flex flex-col items-center gap-1 w-full max-w-[90vw]">
                   <motion.h1
-                    className="font-seasons text-5xl md:text-7xl lg:text-8xl text-primary-foreground italic drop-shadow-lg leading-none"
+                    className="font-seasons text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary-foreground italic drop-shadow-lg leading-none"
                     style={{ transform: `translateX(-${textTranslateX}vw)` }}
                   >
                     Flora
@@ -155,12 +155,12 @@ const ScrollExpandHeroV4 = ({
                     className="flex flex-col items-center"
                     style={{ transform: `translateX(${textTranslateX}vw)` }}
                   >
-                    <h2 className="font-seasons not-italic tracking-[0.35em] md:tracking-[0.5em] text-2xl md:text-4xl lg:text-5xl text-primary-foreground drop-shadow-lg">
+                    <h2 className="font-seasons not-italic tracking-[0.3em] md:tracking-[0.45em] text-lg sm:text-xl md:text-3xl lg:text-4xl text-primary-foreground drop-shadow-lg whitespace-nowrap">
                       BOUTIQUE
                     </h2>
                     {/* Flourish ornament inspired by logo */}
                     <svg
-                      className="mt-2 md:mt-3 w-56 md:w-80 text-primary-foreground/90"
+                      className="mt-2 md:mt-3 w-40 sm:w-52 md:w-72 text-primary-foreground/90"
                       viewBox="0 0 320 24"
                       fill="none"
                       stroke="currentColor"
@@ -176,7 +176,7 @@ const ScrollExpandHeroV4 = ({
                 </div>
                 {subtitle && (
                   <p
-                    className="text-lg md:text-xl text-primary-foreground/90 mt-6 drop-shadow font-seasons italic"
+                    className="text-sm sm:text-base md:text-lg text-primary-foreground/90 mt-5 drop-shadow font-seasons italic max-w-[85vw] px-4"
                     style={{ transform: `translateX(-${textTranslateX}vw)` }}
                   >
                     {subtitle}

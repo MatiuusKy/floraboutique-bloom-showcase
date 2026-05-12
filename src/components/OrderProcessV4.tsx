@@ -25,31 +25,34 @@ const steps = [
 ];
 
 const OrderProcessV4 = () => (
-  <section id="proceso" className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary-glow)/0.25),transparent_70%)]" />
+  <section id="proceso" className="py-24 bg-muted relative overflow-hidden">
     <div className="container mx-auto px-6 relative">
-      <div className="text-center mb-16">
-        <span className="text-xs uppercase tracking-[0.3em] opacity-80">Proceso</span>
-        <h2 className="font-display text-4xl md:text-6xl mt-3">
+      <div className="text-center mb-14">
+        <span className="text-xs uppercase tracking-[0.3em] text-primary/70">Proceso</span>
+        <h2 className="font-display text-4xl md:text-6xl mt-3 text-foreground">
           ¿Cómo hacer tu pedido?
         </h2>
+        <div className="w-16 h-px bg-primary/40 mx-auto mt-6" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-4 max-w-6xl mx-auto">
-        {steps.map((s) => {
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        {steps.map((s, i) => {
           const Icon = s.icon;
           return (
             <div
               key={s.title}
-              className="relative text-center px-6 md:border-r md:last:border-r-0 border-primary-foreground/15"
+              className="relative bg-white rounded-2xl p-8 shadow-soft hover:shadow-elegant transition-shadow text-center group"
             >
-              <div className="relative pt-6 flex justify-center mb-5">
-                <div className="w-14 h-14 rounded-full bg-primary-foreground/10 backdrop-blur-sm flex items-center justify-center ring-1 ring-primary-foreground/20">
-                  <Icon className="w-6 h-6" />
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-primary text-primary-foreground text-xs font-medium flex items-center justify-center shadow-md">
+                {i + 1}
+              </div>
+              <div className="flex justify-center mb-5 mt-2">
+                <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center ring-1 ring-primary/15 group-hover:bg-primary/10 transition-colors">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
               </div>
-              <h3 className="font-display text-xl mb-3">{s.title}</h3>
-              <p className="text-sm opacity-80 leading-relaxed">{s.desc}</p>
+              <h3 className="font-display text-xl mb-3 text-foreground">{s.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
             </div>
           );
         })}
